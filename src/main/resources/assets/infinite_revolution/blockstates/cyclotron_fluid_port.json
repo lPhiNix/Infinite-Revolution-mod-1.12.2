@@ -1,0 +1,5 @@
+{
+  "variants": {
+    "normal": {"model": "infinite_revolution:cyclotron_fluid_port"}
+  }
+}
