@@ -18,7 +18,7 @@ item.trinium_plate.name=Trinium Plate
 item.dense_trinium_plate.name=Dense Trinium Plate
 
 tile.trinium_ore.name=Trinium Ore
-tile.trinium_block.name=Block Of Trinium
+tile.trinium_block.name=Block of Trinium
 
 tile.cyclotron_controller.name=COMET - Cyclotron Controller
 tile.cyclotron_pressure_casing.name=Cyclotron Pressure Casing

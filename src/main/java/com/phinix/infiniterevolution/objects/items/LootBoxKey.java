@@ -36,7 +36,7 @@ public class LootBoxKey extends Item implements IHasModel {
 
     @Override
     public String getItemStackDisplayName(ItemStack stack) {
-        switch (tier) {
+        switch (this.tier) {
             case 0:
                 return TextFormatting.WHITE + super.getItemStackDisplayName(stack);
             case 1:
@@ -52,7 +52,7 @@ public class LootBoxKey extends Item implements IHasModel {
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         String seeTier = Integer.toString(this.tier + 1);
         TextFormatting color;
-        switch (tier) {
+        switch (this.tier) {
             case 0:
                 color = TextFormatting.DARK_GRAY;
                 break;

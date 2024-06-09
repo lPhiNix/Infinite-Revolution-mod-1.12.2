@@ -110,7 +110,7 @@ jar {
         attributes([
             "Specification-Title": "Infinite Revolution",
             "Specification-Vendor": "PhiNix",
-            "Specification-Version": "1", // We are version 1 of ourselves
+            "Specification-Version": "1.2", // We are version 1 of ourselves
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"PhiNix",
