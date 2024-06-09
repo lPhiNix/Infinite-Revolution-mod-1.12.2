@@ -187,7 +187,6 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
                 new ItemLootBox("avaritiaddons:infinity_compressor", 1, 1.0, 0), // 1 Infinity Compressor
                 new ItemLootBox("avaritia:resource", 5, 1.1, 5), // 5 Infinity Catalyst
                 new ItemLootBox("eternalsingularity:eternal_singularity", 8, 1.2, 0), // 8 Eternal Singularity
-                new ItemLootBox("botania:manatablet.withTag({mana: 500000, creative: 1 as byte})", 1, 1.5, 0), // 1 Creative Mana Tablet
                 new ItemLootBox("galacticraftcore:infinite_oxygen", 1, 1.5, 0), // 1 Infinite Oxygen Supply
                 new ItemLootBox("extrautils2:drum", 1, 1.5, 4), // 1 Creative Drum
                 new ItemLootBox("liquid:evilcraftblood", 1, 1.5, 0), // 1 Creative Blood Drop
