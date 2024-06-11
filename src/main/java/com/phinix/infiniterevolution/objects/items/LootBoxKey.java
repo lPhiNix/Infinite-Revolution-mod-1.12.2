@@ -21,7 +21,7 @@ public class LootBoxKey extends Item implements IHasModel {
         setRegistryName(name);
         setCreativeTab(tab);
 
-        if (!(tier == 0 || tier == 1 || tier == 2)) {
+        if (!InfiniteRevolutionLootBox.getLootMap().containsKey(tier)) {
             throw new IllegalArgumentException("Invalid tier: " + tier);
         }
 

@@ -193,30 +193,21 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
                 new ItemLootBox("refinedstorage:storage_disk", 1, 1.5, 4), // 1 Creative Storage Disk
                 new ItemLootBox("sgcraft:stargatering", 4, 2.0, 0), // 4 Stargate Ring Block
                 new ItemLootBox("draconicevolution:draconic_staff_of_power", 1, 2.1, 0), // 1 Draconic Staff Of Power
-                new ItemLootBox("draconicevolution:draconic_chest", 1, 2.2, 0), // 1 Draconic Chestplate
-                new ItemLootBox("draconicevolution:draconic_legs", 1, 2.3, 0), // 1 Draconic Leggings
-                new ItemLootBox("draconicevolution:draconic_helm", 1, 2.4, 0), // 1 Draconic Helmet
-                new ItemLootBox("draconicevolution:draconic_boots", 1, 2.4, 0), // 1 Draconic Boots
-                new ItemLootBox("draconicevolution:draconic_sword", 1, 2.5, 0), // 1 Draconic Sword
-                new ItemLootBox("draconicevolution:draconic_pick", 1, 2.5, 0), // 1 Draconic Pickaxe
-                new ItemLootBox("draconicevolution:draconic_bow", 1, 2.5, 0), // 1 Draconic Bow
-                new ItemLootBox("draconicevolution:draconic_axe", 1, 2.5, 0), // 1 Draconic Axe
-                new ItemLootBox("draconicevolution:draconic_shovel", 1, 2.5, 0), // 1 Draconic Shovel
-                new ItemLootBox("draconicevolution:wyvern_chest", 1, 5.2, 0), // 1 Wyvern Chestplate
-                new ItemLootBox("draconicevolution:wyvern_legs", 1, 5.3, 0), // 1 Wyvern Leggings
-                new ItemLootBox("draconicevolution:wyvern_helm", 1, 5.4, 0), // 1 Wyvern Helmet
-                new ItemLootBox("draconicevolution:wyvern_boots", 1, 5.4, 0), // 1 Wyvern Boots
-                new ItemLootBox("draconicevolution:wyvern_sword", 1, 5.5, 0), // 1 Wyvern Sword
-                new ItemLootBox("draconicevolution:wyvern_pick", 1, 5.5, 0), // 1 Wyvern Pickaxe
-                new ItemLootBox("draconicevolution:wyvern_bow", 1, 5.5, 0), // 1 Wyvern Bow
-                new ItemLootBox("draconicevolution:wyvern_axe", 1, 5.5, 0), // 1 Wyvern Axe
-                new ItemLootBox("draconicevolution:wyvern_shovel", 1, 5.5, 0), // 1 Wyvern Shovel
-                new ItemLootBox("sgcraft:ic2capacitor", 16, 10.0, 0), // 16 Ridiculously Large Circuit
-                new ItemLootBox("avaritia:block_resource", 16, 10.0, 0), // 16 Neutronium Block
-                new ItemLootBox("draconicevolution:chaos_shard", 24, 10.0, 0), // 24 Chaos Shards
-                new ItemLootBox("avaritia:block_resource", 64, 11.0, 2), // 64 Crystal Matrix
-                new ItemLootBox("infinite_revolution:unbreakable_bedrock_pickaxe", 1, 12.0, 0), // 1 Bedrock Pickaxe
-                new ItemLootBox("minecraft:bedrock", 64, 12.0, 0) // 64 Bedrock
+                new ItemLootBox("draconicevolution:draconic_chest", 1, 3.2, 0), // 1 Draconic Chestplate
+                new ItemLootBox("draconicevolution:draconic_legs", 1, 3.3, 0), // 1 Draconic Leggings
+                new ItemLootBox("draconicevolution:draconic_helm", 1, 3.4, 0), // 1 Draconic Helmet
+                new ItemLootBox("draconicevolution:draconic_boots", 1, 3.4, 0), // 1 Draconic Boots
+                new ItemLootBox("draconicevolution:draconic_sword", 1, 3.5, 0), // 1 Draconic Sword
+                new ItemLootBox("draconicevolution:draconic_pick", 1, 3.5, 0), // 1 Draconic Pickaxe
+                new ItemLootBox("draconicevolution:draconic_bow", 1, 3.5, 0), // 1 Draconic Bow
+                new ItemLootBox("draconicevolution:draconic_axe", 1, 3.5, 0), // 1 Draconic Axe
+                new ItemLootBox("draconicevolution:draconic_shovel", 1, 3.5, 0), // 1 Draconic Shovel
+                new ItemLootBox("sgcraft:ic2capacitor", 16, 5.0, 0), // 16 Ridiculously Large Circuit
+                new ItemLootBox("avaritia:block_resource", 16, 5.0, 0), // 16 Neutronium Block
+                new ItemLootBox("draconicevolution:chaos_shard", 24, 5.0, 0), // 24 Chaos Shards
+                new ItemLootBox("avaritia:block_resource", 64, 5.0, 2), // 64 Crystal Matrix
+                new ItemLootBox("infinite_revolution:unbreakable_bedrock_pickaxe", 1, 5.0, 0), // 1 Bedrock Pickaxe
+                new ItemLootBox("minecraft:bedrock", 64, 5.0, 0) // 64 Bedrock
         ));
     }
 
@@ -236,6 +227,10 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
         this.tier = tier;
 
         ItemInit.ITEMS.add(this);
+    }
+
+    public static Map<Integer, List<ItemLootBox>> getLootMap() {
+        return LOOT_MAP;
     }
 
     @Override
@@ -295,7 +290,7 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
                     playerIn.dropItem(randomItemStack.copy(), false);
                 }
 
-                playerIn.sendMessage(new TextComponentString(TextFormatting.GREEN + "You received a random item from Minecraft!"));
+                playerIn.sendMessage(new TextComponentString(getReceiveMessage(this.tier)));
             }
 
             ItemStack stack = playerIn.getHeldItem(handIn);
@@ -312,6 +307,19 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 
+    public String getReceiveMessage(int tier) {
+        switch (tier) {
+            case 0:
+                return TextFormatting.WHITE + "" + TextFormatting.ITALIC + "You received a interstellar random item from a Remote Planet!";
+            case 1:
+                return TextFormatting.BLACK + "" + TextFormatting.ITALIC + "You received a cosmic random item from a Neutron Star!";
+            case 2:
+                return TextUtils.makeFabulous("You received a trascendental random item from Universe!", TextFormatting.BOLD);
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
     private ItemLootBox getRandomItemStack() {
         double totalProbability = lootList.stream().mapToDouble(item -> item.probability).sum();
         double randomValue = new Random().nextDouble() * totalProbability;
@@ -323,7 +331,7 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
             }
         }
 
-        return lootList.get(lootList.size() - 1); // Return the last item as a fallback
+        return lootList.get(lootList.size() - 1);
     }
 
     public static Item getItemFromNameRegistry(String name) {

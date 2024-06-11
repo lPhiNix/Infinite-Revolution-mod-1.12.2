@@ -10,6 +10,7 @@ public class ItemInit {
     public static final List<Item> ITEMS = new ArrayList<Item>();
 
     public static final Item IR_STAR = new InfiniteRevolutionStar("ir_star", InfiniteRevolution.infiniteRevolutionTab);
+    public static final Item GIGA_CHAD_TOKEN = new GigaChadToken("giga_chad_token", InfiniteRevolution.infiniteRevolutionTab);
     public static final Item UNBREAKABLE_BEDROCK_PICKAXE = new BedrockPickaxe("unbreakable_bedrock_pickaxe", InfiniteRevolution.infiniteRevolutionTab);
 
     public static final Item TRINIUM_LOOT_BOX = new InfiniteRevolutionLootBox("trinium_lootbox", InfiniteRevolution.infiniteRevolutionTab, 0);
