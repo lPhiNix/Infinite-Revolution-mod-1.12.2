@@ -48,6 +48,11 @@ public class BedrockPickaxe extends ItemPickaxe implements IHasModel {
     }
 
     @Override
+    public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
+        return true;
+    }
+
+    @Override
     public void registerModels() {
         InfiniteRevolution.proxy.registerItemRenderer(this, 0, "inventory");
         Item item = new Item();
