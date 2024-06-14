@@ -90,33 +90,28 @@ public class InfiniteRevolutionStar extends ItemElectricBase implements IHasMode
 
     // Galacticraft Methods Infinity Battery
     @Override
-    protected void setMaxTransfer()
-    {
+    protected void setMaxTransfer() {
         this.transferMax = AMPERAGE;
     }
 
     @Override
-    public int getTierGC(ItemStack itemStack)
-    {
+    public int getTierGC(ItemStack itemStack) {
         return 3;
     }
 
     @Override
-    public CreativeTabs getCreativeTab()
-    {
+    public CreativeTabs getCreativeTab() {
         return InfiniteRevolution.infiniteRevolutionTab;
     }
 
     @Override
     @SideOnly(Side.CLIENT)
-    public EnumRarity getRarity(ItemStack par1ItemStack)
-    {
+    public EnumRarity getRarity(ItemStack par1ItemStack) {
         return ClientProxyCore.galacticraftItem;
     }
 
     @Override
-    public float getElectricityStored(ItemStack itemStack)
-    {
+    public float getElectricityStored(ItemStack itemStack) {
         return this.getMaxElectricityStored(itemStack);
     }
 
@@ -124,34 +119,28 @@ public class InfiniteRevolutionStar extends ItemElectricBase implements IHasMode
     public void setElectricity(ItemStack itemStack, float joules) {}
 
     @Override
-    public float getMaxElectricityStored(ItemStack itemStack)
-    {
+    public float getMaxElectricityStored(ItemStack itemStack) {
         return Float.POSITIVE_INFINITY;
     }
 
     @Override
-    public float getTransfer(ItemStack itemStack)
-    {
+    public float getTransfer(ItemStack itemStack) {
         return 0.0F;
     }
 
     @Override
-    public float recharge(ItemStack theItem, float energy, boolean doReceive)
-    {
+    public float recharge(ItemStack theItem, float energy, boolean doReceive) {
         return 0F;
     }
 
     @Override
-    public float discharge(ItemStack theItem, float energy, boolean doTransfer)
-    {
+    public float discharge(ItemStack theItem, float energy, boolean doTransfer) {
         return energy;
     }
 
     @Override
-    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list)
-    {
-        if (tab == InfiniteRevolution.infiniteRevolutionTab || tab == CreativeTabs.SEARCH)
-        {
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> list) {
+        if (tab == InfiniteRevolution.infiniteRevolutionTab || tab == CreativeTabs.SEARCH) {
             list.add(new ItemStack(this, 1, 0));
         }
     }

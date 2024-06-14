@@ -310,9 +310,9 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
     public String getReceiveMessage(int tier) {
         switch (tier) {
             case 0:
-                return TextFormatting.WHITE + "" + TextFormatting.ITALIC + "You received a interstellar random item from a Remote Planet!";
+                return TextFormatting.WHITE + "" + TextFormatting.BOLD + "You received a interstellar random item from a Remote Planet!";
             case 1:
-                return TextFormatting.BLACK + "" + TextFormatting.ITALIC + "You received a cosmic random item from a Neutron Star!";
+                return TextFormatting.DARK_GRAY + "" + TextFormatting.BOLD + "You received a cosmic random item from a Neutron Star!";
             case 2:
                 return TextUtils.makeFabulous("You received a trascendental random item from Universe!", TextFormatting.BOLD);
             default:

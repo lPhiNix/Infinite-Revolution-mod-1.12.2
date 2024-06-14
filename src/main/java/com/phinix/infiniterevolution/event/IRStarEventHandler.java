@@ -25,7 +25,6 @@ import static com.phinix.infiniterevolution.objects.items.InfiniteRevolutionStar
 
 @Mod.EventBusSubscriber
 public class IRStarEventHandler {
-
     private static int onPlayerTickCount = 0;
 
     @SubscribeEvent(priority = EventPriority.HIGHEST)
