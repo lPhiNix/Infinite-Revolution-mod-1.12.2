@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
@@ -290,15 +291,14 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
                     playerIn.dropItem(randomItemStack.copy(), false);
                 }
 
-                playerIn.sendMessage(new TextComponentString(getReceiveMessage(this.tier)));
+                playerIn.sendMessage(getReceiveMessage(this.tier, itemLootBox.amount, randomItemStack));
             }
 
             ItemStack stack = playerIn.getHeldItem(handIn);
             if (!playerIn.isCreative()) {
                 stack.shrink(1);
             }
-        }
-        else {
+        } else {
             if (!worldIn.isRemote) {
                 playerIn.sendMessage(new TextComponentString(TextFormatting.RED + "You need a key of the same tier to open this loot box!"));
             }
@@ -307,17 +307,42 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
         return super.onItemRightClick(worldIn, playerIn, handIn);
     }
 
-    public String getReceiveMessage(int tier) {
+    public ITextComponent getReceiveMessage(int tier, int amount, ItemStack itemStack) {
+        ITextComponent amountText = new TextComponentString(String.valueOf(amount));
+        ITextComponent itemText = itemStack.getTextComponent();
+        ITextComponent message;
+        String style;
+
         switch (tier) {
             case 0:
-                return TextFormatting.WHITE + "" + TextFormatting.BOLD + "You received a interstellar random item from a Remote Planet!";
+                style = TextFormatting.WHITE + "" + TextFormatting.BOLD;
+                message = new TextComponentString(style + "You received ")
+                        .appendSibling(amountText)
+                        .appendSibling(new TextComponentString(" "))
+                        .appendSibling(itemText)
+                        .appendSibling(new TextComponentString(style + " from a Remote Planet!"));
+                break;
             case 1:
-                return TextFormatting.DARK_GRAY + "" + TextFormatting.BOLD + "You received a cosmic random item from a Neutron Star!";
+                style = TextFormatting.DARK_GRAY + "" + TextFormatting.BOLD;
+                message = new TextComponentString(style + "You received ")
+                        .appendSibling(amountText)
+                        .appendSibling(new TextComponentString(" "))
+                        .appendSibling(itemText)
+                        .appendSibling(new TextComponentString(style + " from a Neutron Star!"));
+                break;
             case 2:
-                return TextUtils.makeFabulous("You received a trascendental random item from Universe!", TextFormatting.BOLD);
+                String fabulousPrefix = TextUtils.makeFabulous("You received ", TextFormatting.BOLD);
+                message = new TextComponentString(fabulousPrefix)
+                        .appendSibling(amountText)
+                        .appendSibling(new TextComponentString(" "))
+                        .appendSibling(itemText)
+                        .appendSibling(new TextComponentString(TextUtils.makeFabulous(" from the Universe!", TextFormatting.BOLD)));
+                break;
             default:
                 throw new IllegalArgumentException();
         }
+
+        return message;
     }
 
     private ItemLootBox getRandomItemStack() {
