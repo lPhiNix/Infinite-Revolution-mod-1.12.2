@@ -15,9 +15,9 @@ public class ItemInit {
     public static final Item UNBREAKABLE_BEDROCK_PICKAXE = new BedrockPickaxe("unbreakable_bedrock_pickaxe", InfiniteRevolution.infiniteRevolutionTab);
 
     //LOOTBOXES
-    public static final Item TRINIUM_LOOT_BOX_0 = new InfiniteRevolutionLootBox("trinium_lootbox", InfiniteRevolution.infiniteRevolutionTab, 0);
-    public static final Item NEUTRONIUM_LOOT_BOX_0 = new InfiniteRevolutionLootBox("neutronium_lootbox", InfiniteRevolution.infiniteRevolutionTab, 1);
-    public static final Item INFINITE_LOOT_BOX_0 = new InfiniteRevolutionLootBox("infinite_lootbox", InfiniteRevolution.infiniteRevolutionTab, 2);
+    public static final Item TRINIUM_LOOTBOX = new InfiniteRevolutionLootBox("trinium_lootbox", InfiniteRevolution.infiniteRevolutionTab, 0);
+    public static final Item NEUTRONIUM_LOOTBOX = new InfiniteRevolutionLootBox("neutronium_lootbox", InfiniteRevolution.infiniteRevolutionTab, 1);
+    public static final Item INFINITE_LOOTBOX = new InfiniteRevolutionLootBox("infinite_lootbox", InfiniteRevolution.infiniteRevolutionTab, 2);
 
     //KEYS
     public static final Item TRINIUM_KEY = new LootBoxKey("trinium_key", InfiniteRevolution.infiniteRevolutionTab, 0);
