@@ -1,9 +1,9 @@
 package com.phinix.infiniterevolution.objects.items;
 
+import com.phinix.infiniterevolution.InfiniteRevolution;
 import com.phinix.infiniterevolution.init.ItemInit;
 import com.phinix.infiniterevolution.util.IHasModel;
 import com.phinix.infiniterevolution.util.TextUtils;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
@@ -17,7 +17,6 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
-import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 import java.util.*;
@@ -407,7 +406,7 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
     @Override
     public void registerModels() {
         for (int i = 0; i <= MAX_FORTUNE_LEVEL; i++) {
-            ModelLoader.setCustomModelResourceLocation(this, i, new ModelResourceLocation(getRegistryName(), "inventory"));
+            InfiniteRevolution.proxy.registerItemRenderer(this, i, "inventory");
         }
     }
 

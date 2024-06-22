@@ -18,7 +18,5 @@ public class ItemBase extends Item implements IHasModel {
     @Override
     public void registerModels() {
         InfiniteRevolution.proxy.registerItemRenderer(this, 0, "inventory");
-        Item item = new Item();
-        item.getRegistryName();
     }
 }

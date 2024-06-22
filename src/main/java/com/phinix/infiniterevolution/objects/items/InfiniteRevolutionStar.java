@@ -41,15 +41,6 @@ public class InfiniteRevolutionStar extends ItemElectricBase implements IHasMode
     }
 
     @Override
-    public void registerModels() {
-        ModelLoader.setCustomModelResourceLocation(this, 0, new ModelResourceLocation(getRegistryName(), "inventory"));
-        ModelLoader.setCustomMeshDefinition(this, stack -> {
-            ResourceLocation modelLocation = new ResourceLocation("infinite_revolution:item/ir_star");
-            return new ModelResourceLocation(modelLocation, "inventory");
-        });
-    }
-
-    @Override
     public String getItemStackDisplayName(ItemStack stack) {
         String itemName = super.getItemStackDisplayName(stack);
         return TextUtils.makeFabulous(itemName, TextFormatting.BOLD);
@@ -86,6 +77,11 @@ public class InfiniteRevolutionStar extends ItemElectricBase implements IHasMode
             stack.setTagCompound(new NBTTagCompound());
         }
         stack.getTagCompound().setBoolean("IRStarActive", active);
+    }
+
+    @Override
+    public void registerModels() {
+        InfiniteRevolution.proxy.registerItemRenderer(this, 0, "inventory");
     }
 
     // Galacticraft Methods Infinity Battery
