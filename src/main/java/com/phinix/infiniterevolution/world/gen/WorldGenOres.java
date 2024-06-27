@@ -1,5 +1,6 @@
 package com.phinix.infiniterevolution.world.gen;
 
+import com.phinix.infiniterevolution.config.ModConfig;
 import com.phinix.infiniterevolution.init.BlockInit;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -33,14 +34,28 @@ public class WorldGenOres implements IWorldGenerator {
     private void generateNether(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {}
 
     private void generateEnd(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
+        System.out.println("Intentando generar minerales en The End en el chunk (" + chunkX + ", " + chunkZ + ")");
+
+        if (ModConfig.generateInfinityCatalystOre) {
+            generateOre(BlockInit.INFINITY_CATALYST_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 3, 100, 3, 4, Blocks.END_STONE);
+        }
         generateOre(BlockInit.TRINIUM_ORE.getDefaultState(), world, random, chunkX * 16, chunkZ * 16, 3, 100, random.nextInt(5) + 9, 8, Blocks.END_STONE);
     }
 
     private void generateOre(IBlockState ore, World world, Random random, int x, int z, int minY, int maxY, int size, int chances, Block targetBlock) {
         int deltaY = maxY - minY;
 
+        System.out.println("Generando mineral: " + ore.getBlock().getLocalizedName() + " en " + chances + " intentos");
+
         for (int i = 0; i < chances; i++) {
             BlockPos pos = new BlockPos(x + random.nextInt(16), minY + random.nextInt(deltaY), z + random.nextInt(16));
+            System.out.println("Intentando generar en " + pos + ": " + ore.getBlock().getLocalizedName());
+
+            if (world.getBlockState(pos.down()).getBlock() == targetBlock) {
+                System.out.println("Generando en " + pos + " sobre " + targetBlock.getLocalizedName());
+            } else {
+                System.out.println("Posicion Invalida: " + ore.getBlock().getLocalizedName());
+            }
 
             WorldGenMinable generator = new WorldGenMinable(ore, size, BlockMatcher.forBlock(targetBlock));
             generator.generate(world, random, pos);

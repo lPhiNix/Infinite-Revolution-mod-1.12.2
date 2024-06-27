@@ -2,6 +2,7 @@ package com.phinix.infiniterevolution.init;
 
 import com.phinix.infiniterevolution.InfiniteRevolution;
 import com.phinix.infiniterevolution.objects.blocks.BlockBase;
+import com.phinix.infiniterevolution.objects.blocks.InfinityCatalystOre;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
@@ -12,6 +13,7 @@ public class BlockInit {
     public static final List<Block> BLOCKS = new ArrayList<Block>();
 
     public static final Block TRINIUM_ORE = new BlockBase("trinium_ore", Material.ROCK, InfiniteRevolution.infiniteRevolutionTab, 6.0f, 5.0f, "pickaxe", 4);
+    public static final Block INFINITY_CATALYST_ORE = new InfinityCatalystOre("infinity_catalyst_ore", Material.ROCK, InfiniteRevolution.infiniteRevolutionTab, 50.0f, 50.0f, "pickaxe", 600);
     public static final Block TRINIUM_BLOCK = new BlockBase("trinium_block", Material.IRON, InfiniteRevolution.infiniteRevolutionTab, 7.0f, 10.0f, "pickaxe", 4);
 
     //public static final Block CYCLOTRON_CONTROLLER = new BlockBase("cyclotron_controller", Material.IRON, Main.infiniteRevolutionTab, 10.0f, 10.0f, "pickaxe", 5);

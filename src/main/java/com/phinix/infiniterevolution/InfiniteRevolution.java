@@ -1,5 +1,6 @@
 package com.phinix.infiniterevolution;
 
+import com.phinix.infiniterevolution.config.ModConfig;
 import com.phinix.infiniterevolution.proxy.CommonProxy;
 import com.phinix.infiniterevolution.tabs.IRTab;
 import com.phinix.infiniterevolution.util.Reference;
@@ -41,6 +42,7 @@ public class InfiniteRevolution {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger.info("Pre-initialization of Infinite Revolution Mod");
+        ModConfig.init(event);
         GameRegistry.registerWorldGenerator(new WorldGenOres(), 3);
     }
 
