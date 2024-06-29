@@ -9,7 +9,7 @@ public class ModConfig {
     private static Configuration config;
 
     public static boolean generateInfinityCatalystOre = true;
-    public static int infinityCatalystDropChance = 1;
+    public static int infinityCatalystDropChance = 20;
 
     public static void init(FMLPreInitializationEvent event) {
         config = new Configuration(event.getSuggestedConfigurationFile());

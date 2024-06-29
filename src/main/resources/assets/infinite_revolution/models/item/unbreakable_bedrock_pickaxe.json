@@ -1,5 +1,5 @@
 {
-  "parent": "item/generated",
+  "parent": "item/handheld",
   "textures": {
     "layer0": "infinite_revolution:items/unbreakable_bedrock_pickaxe"
   }

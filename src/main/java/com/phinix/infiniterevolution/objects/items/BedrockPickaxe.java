@@ -19,7 +19,7 @@ import net.minecraftforge.common.util.EnumHelper;
 import java.util.List;
 
 public class BedrockPickaxe extends ItemPickaxe implements IHasModel {
-    public static final Item.ToolMaterial BEDROCK = EnumHelper.addToolMaterial("Bedrock", 600, 100, 100.0f, 0, 10);
+    public static final Item.ToolMaterial BEDROCK = EnumHelper.addToolMaterial("Bedrock", 600, 100, 100.0f, 8, 10);
     public BedrockPickaxe(String name, CreativeTabs tab) {
         super(BEDROCK);
         setUnlocalizedName(name);

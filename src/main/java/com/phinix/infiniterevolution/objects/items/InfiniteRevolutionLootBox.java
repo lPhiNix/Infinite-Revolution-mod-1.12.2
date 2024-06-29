@@ -155,6 +155,7 @@ public class InfiniteRevolutionLootBox extends Item implements IHasModel {
                 new ItemLootBox("avaritia:singularity", 1, 1.5, 8), // 1 Silver Singularity
                 new ItemLootBox("avaritia:singularity", 1, 1.5, 9), // 1 Nickel Singularity
                 new ItemLootBox("avaritia:singularity", 1, 1.5, 10), // 1 Diamond Singularity
+                new ItemLootBox("infinite_revolution:infinity_catalyst_dust", 16, 1.9, 0), // 1 Infinity Catalyst Dust
                 new ItemLootBox("infinite_revolution:unbreakable_bedrock_pickaxe", 1, 2.0, 0), // 1 Bedrock Pickaxe
                 new ItemLootBox("avaritia:neutron_collector", 1, 2.0, 0), // 1 Neutronium Collector
                 new ItemLootBox("avaritia:block_resource", 6, 5.0, 0), // 6 Neutronium Block

@@ -7,6 +7,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.*;
@@ -76,7 +77,7 @@ public class IRStarEventHandler {
             player.capabilities.setPlayerWalkSpeed(0.3f);
             player.capabilities.setFlySpeed(0.15f);
 
-            PotionEffect nightVisionNoParticles = new NightVisionNoParticles(150, 0);
+            PotionEffect nightVisionNoParticles = new NightVisionNoParticles(322, 0);
             player.addPotionEffect(nightVisionNoParticles);
 
             onPlayerTickCount = 0;
@@ -108,20 +109,23 @@ public class IRStarEventHandler {
             ItemStack stack = event.getItemStack();
             if (!stack.isEmpty() && stack.getItem() instanceof InfiniteRevolutionStar) {
                 IBlockState state = event.getWorld().getBlockState(event.getPos());
+                Block block = state.getBlock();
                 if (isUnbreakableBlock(state.getBlock())) {
+
                     World world = event.getWorld();
                     EntityPlayer player = event.getEntityPlayer();
                     BlockPos pos = event.getPos();
 
                     if (world.isAirBlock(pos)) return;
                     if (!world.isRemote) {
-                        Block block = state.getBlock();
                         world.destroyBlock(pos, true);
-                        ItemStack bedrockStack = new ItemStack(block);
-                        EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), bedrockStack);
-                        world.spawnEntity(entityItem);
+                        if (block == Blocks.BEDROCK || block == Blocks.END_PORTAL_FRAME) {
+                            ItemStack bedrockStack = new ItemStack(block);
+                            EntityItem entityItem = new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), bedrockStack);
+                            world.spawnEntity(entityItem);
+                        }
+                        event.setCanceled(true);
                     }
-                    event.setCanceled(true);
                 }
             }
         }
