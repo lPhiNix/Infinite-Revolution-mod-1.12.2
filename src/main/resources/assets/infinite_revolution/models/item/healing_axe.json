@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "infinite_revolution:items/healing_axe"
+  }
+}

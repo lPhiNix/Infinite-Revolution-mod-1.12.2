@@ -16,6 +16,13 @@ public class BlockInit {
     public static final Block TRINIUM_BLOCK = new BlockBase("trinium_block", Material.IRON, InfiniteRevolution.infiniteRevolutionTab, 7.0f, 10.0f, "pickaxe", 4);
     public static final Block INFINITY_CATALYST_ORE = new InfinityCatalystOre("infinity_catalyst_ore", Material.ROCK, InfiniteRevolution.infiniteRevolutionTab, -1, 100.0f, "pickaxe", 600);
 
+    //DECORATION
+    public static final Block GOLDEN_MARBLE_BRICKS = new BlockBase("golden_marble_bricks", Material.ROCK, InfiniteRevolution.infiniteRevolutionTab, 6.0f, 5.0f, "pickaxe", 1);
+    public static final Block GOLDEN_MARBLE_ARCH = new BlockBase("golden_marble_arch", Material.ROCK, InfiniteRevolution.infiniteRevolutionTab, 6.0f, 5.0f, "pickaxe", 1);
+
+    //IC2 INTEGRATIONS
+    //public static final Block REACTOR_PRESSURE_GLASS = new ReactorGlassVessel("ic2_reactor_pressure_glass", Material.GLASS, InfiniteRevolution.infiniteRevolutionTab, 3.0f, 10.0f, "pickaxe", 3);
+
     //public static final Block CYCLOTRON_CONTROLLER = new BlockBase("cyclotron_controller", Material.IRON, Main.infiniteRevolutionTab, 10.0f, 10.0f, "pickaxe", 5);
     //public static final Block CYCLOTRON_CONTROLLER_ACTIVE = new BlockBase("cyclotron_controller_active", Material.IRON, Main.infiniteRevolutionTab, 10.0f, 10.0f, "pickaxe", 5);
     //public static final Block QUANTUM_COIL = new BlockBase("quantum_coil", Material.IRON, Main.infiniteRevolutionTab, 2.0f, 50.0f, "pickaxe", 0);

@@ -1,6 +1,7 @@
 package com.phinix.infiniterevolution.objects.items;
 
 import com.phinix.infiniterevolution.InfiniteRevolution;
+import com.phinix.infiniterevolution.config.ModConfig;
 import com.phinix.infiniterevolution.init.ItemInit;
 import com.phinix.infiniterevolution.util.IHasModel;
 import com.phinix.infiniterevolution.util.TextUtils;
@@ -11,6 +12,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.util.List;
 
@@ -21,7 +24,7 @@ public class LootBoxKey extends Item implements IHasModel {
         setRegistryName(name);
         setCreativeTab(tab);
 
-        if (!InfiniteRevolutionLootBox.getLootMap().containsKey(tier)) {
+        if (!ModConfig.lootMap.containsKey(tier)) {
             throw new IllegalArgumentException("Invalid tier: " + tier);
         }
 
@@ -34,6 +37,7 @@ public class LootBoxKey extends Item implements IHasModel {
         return this.tier;
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public String getItemStackDisplayName(ItemStack stack) {
         switch (this.tier) {
@@ -47,6 +51,7 @@ public class LootBoxKey extends Item implements IHasModel {
                 throw new IllegalArgumentException();
         }
     }
+
 
     @Override
     public void addInformation(ItemStack stack, World worldIn, List<String> tooltip, ITooltipFlag flagIn) {

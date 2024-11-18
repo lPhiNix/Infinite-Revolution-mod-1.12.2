@@ -13,7 +13,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.0'
+version = '1.4'
 group = 'com.yourname.modid' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'modid'
 
@@ -84,7 +84,11 @@ dependencies {
     // The userdev artifact is a special name and will get all sorts of transformations applied to it.
     minecraft 'net.minecraftforge:forge:1.12.2-14.23.5.2860'
     compile "mezz.jei:jei_1.12.2:4.16.1.301"
-    compile "dev.galacticraft:galacticraft-legacy:4.0.2.283"
+
+    compile files('libs/Galacticraft-1.12.2-4.0.6.jar')
+    compile files('libs/industrialcraft-2-2.8.222-ex112.jar')
+    compile files('libs/Mekanism-1.12.2-9.8.3.390.jar')
+    compile files('libs/Avaritia-1.12.2-3.3.0.37-universal.jar')
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"
@@ -110,7 +114,7 @@ jar {
         attributes([
             "Specification-Title": "Infinite Revolution",
             "Specification-Vendor": "PhiNix",
-            "Specification-Version": "1.2", // We are version 1 of ourselves
+            "Specification-Version": "1.2",
             "Implementation-Title": project.name,
             "Implementation-Version": "${version}",
             "Implementation-Vendor" :"PhiNix",

@@ -1,9 +1,10 @@
 itemGroup.infiniteRevolutionTab=Infinite Revolution
-itemGroup.lootboxTab=Infinite Revolution LootBoxes
 
 item.ir_star.name=Infinite Revolution Star
 item.giga_chad_token.name=Giga Chad Token
 item.not_noob_certificate.name=Certificate Of Not Being A Noob Anymore
+item.antimatter.name=Antimatter
+item.healing_axe.name=Healing Axe
 
 item.trinium_lootbox.name=Trinium LootBox
 item.neutronium_lootbox.name=Neutronium LootBox
@@ -12,6 +13,10 @@ item.infinite_lootbox.name=Infinite LootBox
 item.trinium_key.name=Trinium Key
 item.neutronium_key.name=Neutronium Key
 item.infinite_key.name=Infinite Key
+
+item.trinium_key_fragment.name=Trinium Key Fragment
+item.neutronium_key_fragment.name=Neutronium Key Fragment
+item.infinite_key_fragment.name=Infinite Key Fragment
 
 item.unbreakable_bedrock_pickaxe.name=Bedrock Pickaxe
 
@@ -26,6 +31,9 @@ tile.trinium_block.name=Block of Trinium
 
 tile.trinium_ore.name=Trinium Ore
 tile.infinity_catalyst_ore.name=Infinity Catalyst Ore
+
+tile.golden_marble_bricks.name=Golden Marble Bricks
+tile.golden_marble_arch.name=Golden Marble Arch
 
 tile.cyclotron_controller.name=COMET - Cyclotron Controller
 tile.cyclotron_pressure_casing.name=Cyclotron Pressure Casing
