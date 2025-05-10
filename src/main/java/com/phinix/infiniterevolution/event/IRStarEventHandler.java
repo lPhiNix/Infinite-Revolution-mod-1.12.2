@@ -1,29 +1,22 @@
 package com.phinix.infiniterevolution.event;
 
 import com.phinix.infiniterevolution.effect.NightVisionNoParticles;
-import com.phinix.infiniterevolution.objects.items.BedrockPickaxe;
 import com.phinix.infiniterevolution.objects.items.InfiniteRevolutionStar;
-import morph.avaritia.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
-import net.minecraft.util.DamageSource;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
-import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import com.phinix.infiniterevolution.init.ItemInit;
@@ -132,7 +125,7 @@ public class IRStarEventHandler {
 
         if (isNew) {
             player.addPotionEffect(nightVision);
-        } else {
+        } else if (hasIRStar(player)) {
             player.removePotionEffect(nightVision.getPotion());
         }
     }
